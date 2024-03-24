@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="con">
+            <input type="number" id="one" placeholder="enter value 1">
+            <br>
+            <input type="number" id="two" placeholder="enter value 2"> <br>
+            <input type="text" id="oper" placeholder="enter the operator">
+            <br>
+            <button id="btn">Calculate</button>
+            <h1 id="res">0</h1>
+        </div>
+    </div>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ecf0f3;
+    font-family:sans-serif;
+    outline: none;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con{
+    background-color:#ecf0f3;
+    padding: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+     text-align: center;
+    border-radius: 30px;
+
+}
+input{
+    border: none;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+   padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+}
+button{
+    border: none;
+    background-color: green;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+    border-radius: 20px;
+}
+@media screen  and (max-width:700px){
+
+    .con{
+        padding: 500px;
+    }
+}
+    </style>
+    <script>
+        let btn=document.getElementById("btn")
+        btn.addEventListener('click',cal)
+        function cal(){
+        let valone=Number(document.getElementById("one").value)
+        
+        console.log(valone);
+        let valtwo=Number(document.getElementById("two").value)
+        console.log(valtwo);
+        let op=document.getElementById("oper").value
+       console.log(op);
+       let res;
+       if(op=='+'){
+        res=valone+valtwo
+       }
+       else if(op=='-'){
+        res=valone-valtwo
+       }
+       else if(op=='*'){
+        res=valone*valtwo
+       }
+       else if(op=='/')
+       {
+        res=valone/valtwo
+       }
+       console.log(res)
+       document.getElementById("res").innerHTML=res
+    }
+    </script>
+</body>
+</html>
